@@ -1,0 +1,18 @@
+@(formList: List[User],user: Form[User])
+@main("Form samples") {
+    @if(user != null) {
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @user.name <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+
+                    <li class="divider"></li>
+                    @for(i <- User.findAll()) {
+
+                    <li><a href="#"><i class="fa fa-power-off"></i>@i.name</a></li>}
+                    <li><a href="@routes.Application.logout()"><i class="fa fa-power-off"></i> @Messages("logout")</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}

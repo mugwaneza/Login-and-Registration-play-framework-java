@@ -1,0 +1,94 @@
+@(form: Form[User])
+
+@main("Registration.."){
+<div class="well col-md-6  col-md-offset-1  " style="width: 900px">
+      <h1 class="  col-md-6  col-md-offset-3  "> Signup Form </h1>
+    <div class="row">
+        <div class="  col-md-6  col-md-offset-3  ">
+
+
+                    <form action="@routes.Application.register()" method="POST">
+                        <div class="form-group row  ">
+                            <label class="col-sm-2 form-control-label">Names</label>
+                            <div class="col-sm-10">
+                                <input
+                                name="name"
+                                id="name"
+                                class="form-control"
+
+                                type="text"
+                                placeholder=" Names"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row  ">
+                            <label class="col-sm-2 form-control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input
+                                name="email"
+                                id="email"
+
+                                data-title="Please use valid Email address"
+                                required=""
+                                data-regex="email"
+
+                                class="form-control"
+                                type="email"
+                                placeholder="Email"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row  ">
+                            <label class="col-sm-2 form-control-label">Level</label>
+                            <div class="col-sm-10">
+
+                                <select class="form-control"
+                                name="level"
+                                id="level">
+                                    <option value="" >select ..</option>
+                                    <option value="vendor">vendor</option>
+                                    <option value="admin">admin</option>
+                                    <option value="supervisor">supervisor</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row   ">
+                            <label class="col-sm-2 form-control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input
+                                name="password"
+                                id="password"
+
+                                class="form-control"
+                                type="password"
+                                placeholder="Password"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row  ">
+                            <label class="col-sm-2 col-xl-2 form-control-label">Repeat password</label>
+                            <div class="col-sm-10">
+                                <input
+                                name="repeatPassword"
+                                id=""
+                                value=""
+                                class="form-control"
+                                type="password"
+                                placeholder="Repeat password"/>
+                            </div>
+                        </div>
+
+
+                        <div class=" form-group col-md-offset-2  ">
+                            <input type="submit" class="btn btn-primary " value="Register"/>
+                            <a href="@routes.Application.login()" ><input type="reset"  class="btn btn-default " value="Cancel"/></a>
+                       </div>
+
+                    </form>
+
+                </div>
+            </div>
+</div>
+}
