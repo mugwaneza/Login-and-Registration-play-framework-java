@@ -49,9 +49,14 @@ public class User extends Model {
         return find.all();
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     /**
      * Retrieve a User from email.
      */
+
     public static User findByEmail(String email) {
         return find.where().eq("email", email).findUnique();
     }
@@ -78,12 +83,14 @@ public class User extends Model {
 
     public User() {}
 
-    public User(String name, String email, String password, String level) {
+     public User(String name, String email, String password, String level) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.level = level;
     }
+
+
     public static void saveInfo (User info) {
 
         info.save();

@@ -4,7 +4,7 @@
 
 
 # Authentication
-GET         /login               controllers.Application.login()
+GET         /              controllers.Application.login()
 POST        /login               controllers.Application.authenticate()
 GET         /logout              controllers.Application.logout()
 GET         /show                controllers.Application.profile()
